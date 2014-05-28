@@ -34,6 +34,11 @@
 	<cfsavecontent variable="variables.tmpsearch"><mango:Blog searchUrl /></cfsavecontent>
 	<cfset variables.tmpsearch = trim(variables.tmpsearch) />
 
+	<cfparam name="attributes.postImage" default="[error: no post image]" />
+	<cfparam name="attributes.postTitle" default="[error: no post title]" />
+	<cfparam name="attributes.postByline" default="[error: no post byline]" />
+	<cfparam name="attributes.postLink" default="" />
+
 	<cfset variables.cssUrl = variables.skinurl & "assets/css" />
 	<cfset variables.jsUrl = variables.skinurl & "assets/js" />
 
@@ -73,46 +78,43 @@
 
 			<mango:Event name="beforeHtmlBodyStart" />
 
-			<div class="blog-masthead">
-				<div class="navbar-inner">
-					<nav class="blog-nav pull-right">
-						<a class="blog-nav-item" href="http://www.alumniq.com">Home</a>
-						<a class="blog-nav-item active" href="http://blog.alumniq.com">Blog</a>
-						<a class="blog-nav-item" href="http://www.alumniq.com/#about">About</a>
-						<a class="blog-nav-item" href="http://www.alumniq.com/#features">Features</a>
-						<a class="blog-nav-item" href="http://www.alumniq.com/#demo">Schedule a Demo</a>
-					</nav>
-					<nav class="burger pull-right" data-visible="false"><span class="glyphicon glyphicon glyphicon-align-justify"></span></nav>
-					<a href="http://www.alumniq.com" class="brand pull-left" title="AlumnIQ" alt="AlumnIQ"><span>AlumnIQ</span></a>
-				</div>
+			<div class="bg">
+				<div class="bg-normal" style="background-image:url(<cfoutput>#attributes.postImage#</cfoutput>)"></div>
+				<div class="bg-blur" style="background-image:url(<cfoutput>#attributes.postImage#</cfoutput>)"></div>
 			</div>
 
-			<div class="container">
-
-				<div class="blog-header">
-					<p class="lead blog-description"><cfoutput>#variables.tagline#</cfoutput></p>
+			<header>
+				<div class="slogan-holder">
+					<cfoutput>
+						<h2>#attributes.postTitle#</h2>
+						<h4>
+							#attributes.postByline#
+							<br/><a href="#attributes.postLink#">permanent link</a>
+						</h4>
+					</cfoutput>
 				</div>
+				<div class="nav-holder">
+					<ul class="nav">
+						<li><a class="blog-nav-item" href="http://www.alumniq.com">AlumnIQ Home</a></li>
+						<li><a class="blog-nav-item active" href="http://blog.alumniq.com">Blog</a></li>
+						<li><a class="blog-nav-item" href="http://www.alumniq.com/#about">About</a></li>
+						<li><a class="blog-nav-item" href="http://www.alumniq.com/#features">Features</a></li>
+					</ul>
+				</div>
+			</header>
 
-		      <div class="row">
-					<!--- main content area --->
-					<cfif attributes.sidebar>
-						<cfset mainWidth = 8 />
-					<cfelse>
-						<cfset mainWidth = 12 />
-					</cfif>
-					<div class="col-sm-<cfoutput>#mainWidth#</cfoutput> blog-main">
+			<div class="wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 blog-main">
 <cfelse>
 					</div>
+				</div>
 
-					<!--- sidebar --->
-					<cfif attributes.sidebar>
-						<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-							<cfinclude template="sidebar.cfm" />
-						</div>
-					</cfif>
-
-				</div><!--- /row --->
 			</div><!--- /container --->
+			<!--- bottom bar (in lieu of sidebar) --->
+			<cfinclude template="sidebar.cfm" />
+		</div><!--- /wrapper --->
 
 			<cfoutput>
 				<footer class="blog-footer">
@@ -123,6 +125,7 @@
 				<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 				<script src="#variables.skinurl#assets/shadowbox/shadowbox.js"></script>
 				<script src="#variables.jsUrl#/CMS.js"></script>
+				<script src="#variables.jsUrl#/60fps-scroll.js"></script>
 			</cfoutput>
 
 			<cms:htmlfoot output="true" />

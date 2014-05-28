@@ -18,7 +18,19 @@
 		<template id="login" file="login.cfm" />
 	</adminPageTemplates>
 	<podLocations>
-		<location id="sidebar" name="General Sidebar">
+		<location id="bottom-left" name="Bottom Bar (left)">
+			<pod id="search">Blog Search</pod>
+			<pod id="subscribe">Email Subscribe</pod>
+			<pod id="monthly-archives">Monthly Archives</pod>
+			<pod id="categories">Categories</pod>
+		</location>
+		<location id="bottom-center" name="Bottom Bar (center)">
+			<pod id="search">Blog Search</pod>
+			<pod id="subscribe">Email Subscribe</pod>
+			<pod id="monthly-archives">Monthly Archives</pod>
+			<pod id="categories">Categories</pod>
+		</location>
+		<location id="bottom-right" name="Bottom Bar (right)">
 			<pod id="search">Blog Search</pod>
 			<pod id="subscribe">Email Subscribe</pod>
 			<pod id="monthly-archives">Monthly Archives</pod>

@@ -28,6 +28,30 @@ $(window).on('resize', function(){
 	}
 });
 
+//medium effect
+$(function(){
+	/* http://bassta.bg/2013/12/medium-com-like-blurred-header-effect/ */
+
+	var $window = $(window);
+	var $body   = $("body");
+	var $bgBlur = $(".bg-blur");
+	var bgBlurHeight = $bgBlur.height();
+	var blurWhenReach = 3; //blur factor, 3 means the image will be blurred when you scroll 1/3 of the div
+
+	$window.on("scroll", function(event){
+		var scrollTop = $window.scrollTop();
+		if(scrollTop < bgBlurHeight){
+			var _alpha = (scrollTop / bgBlurHeight) * blurWhenReach;
+			if(_alpha > 1){
+				_alpha = 1;
+			}
+			$bgBlur.css({opacity: _alpha });
+		}
+		$(".bg div").css('top', -1 * (scrollTop/1.6) + 'px');
+		$(".slogan-holder").css('padding-top', (scrollTop/5.5) + 'px');
+	});
+});
+
 //start shadowbox
 Shadowbox.init();
 
