@@ -77,7 +77,7 @@
 				<div class="navbar-inner">
 					<nav class="blog-nav pull-right">
 						<a class="blog-nav-item" href="http://www.alumniq.com">Home</a>
-						<a class="blog-nav-item active" href="http://blog.countermarch.com">Blog</a>
+						<a class="blog-nav-item active" href="http://blog.alumniq.com">Blog</a>
 						<a class="blog-nav-item" href="http://www.alumniq.com/#about">About</a>
 						<a class="blog-nav-item" href="http://www.alumniq.com/#features">Features</a>
 						<a class="blog-nav-item" href="http://www.alumniq.com/#demo">Schedule a Demo</a>
