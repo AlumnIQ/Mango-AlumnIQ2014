@@ -1,6 +1,6 @@
-# CMS2014
+# AlumnIQ2014
 
-This is a [Mango Blog](http://www.mangoblog.org) theme I've developed for use at [blog.countermarch.com](http://blog.countermarch.com).
+This is a [Mango Blog](http://www.mangoblog.org) theme I've developed for use at [blog.alumniq.com](http://blog.alumniq.com).
 
 I publish my themes as open source so that others can benefit from them, learning how best to develop their own themes using the Mango custom tag system. All of my themes are "pod-enabled," because pods are awesome.
 
