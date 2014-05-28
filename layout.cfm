@@ -19,6 +19,9 @@
 	<cfsavecontent variable="variables.defaultTitle"><mango:Blog title /></cfsavecontent>
 	<cfparam name="attributes.title" default="#variables.defaultTitle#" />
 
+	<cfsavecontent variable="variables.tagline"><mango:Blog tagline /></cfsavecontent>
+	<cfset variables.tagline = trim(variables.tagline) />
+
 	<cfsavecontent variable="variables.rssurl"><mango:Blog rssurl /></cfsavecontent>
 	<cfset variables.rssurl = trim(variables.rssurl) />
 
@@ -73,21 +76,21 @@
 			<div class="blog-masthead">
 				<div class="navbar-inner">
 					<nav class="blog-nav pull-right">
-						<a class="blog-nav-item" href="http://www.countermarch.com">Home</a>
+						<a class="blog-nav-item" href="http://www.alumniq.com">Home</a>
 						<a class="blog-nav-item active" href="http://blog.countermarch.com">Blog</a>
-						<a class="blog-nav-item" href="http://www.countermarch.com/##products">Products</a>
-						<a class="blog-nav-item" href="http://www.countermarch.com/about/">About Us</a>
-						<a class="blog-nav-item" href="http://www.countermarch.com/about/#contact">Contact</a>
+						<a class="blog-nav-item" href="http://www.alumniq.com/#about">About</a>
+						<a class="blog-nav-item" href="http://www.alumniq.com/#features">Features</a>
+						<a class="blog-nav-item" href="http://www.alumniq.com/#demo">Schedule a Demo</a>
 					</nav>
 					<nav class="burger pull-right" data-visible="false"><span class="glyphicon glyphicon glyphicon-align-justify"></span></nav>
-					<a href="http://www.countermarch.com" class="brand pull-left" title="CounterMarch Systems Blog" alt="CounterMarch Systems Blog"><span>CounterMarch Systems</span></a>
+					<a href="http://www.alumniq.com" class="brand pull-left" title="AlumnIQ" alt="AlumnIQ"><span>AlumnIQ</span></a>
 				</div>
 			</div>
 
 			<div class="container">
 
 				<div class="blog-header">
-					<p class="lead blog-description">Thoughts on creating <strong>a smarter class of software</strong> for alumni relations</p>
+					<p class="lead blog-description"><cfoutput>#variables.tagline#</cfoutput></p>
 				</div>
 
 		      <div class="row">
