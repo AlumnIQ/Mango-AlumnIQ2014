@@ -36,6 +36,7 @@
 
 	<cfparam name="attributes.showHeaderImage" default="true" />
 	<cfparam name="attributes.showFooter" default="true" />
+	<cfparam name="attributes.fullscreenBG" default="false" />
 
 	<cfparam name="attributes.postImage" default="[error: no post image]" />
 	<cfparam name="attributes.postTitle" default="[error: no post title]" />
@@ -81,6 +82,13 @@
 
 			<mango:Event name="beforeHtmlBodyStart" />
 
+			<cfif attributes.fullscreenBG>
+				<div id="archives-bg">
+					<div class="bg-normal"></div>
+					<div class="bg-blur"></div>
+				</div>
+			</cfif>
+
 			<cfif attributes.showHeaderImage>
 				<div class="bg">
 					<div class="bg-normal" style="background-image:url(<cfoutput>#attributes.postImage#</cfoutput>)"></div>
@@ -108,7 +116,7 @@
 				</header>
 			</cfif>
 
-			<div class="wrapper">
+			<cfif !attributes.fullscreenBG><div class="wrapper"></cfif>
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 blog-main">
@@ -122,7 +130,7 @@
 				<!--- bottom bar (in lieu of sidebar) --->
 				<cfinclude template="sidebar.cfm" />
 			</cfif>
-		</div><!--- /wrapper --->
+		<cfif !attributes.fullscreenBG></div></cfif><!--- /wrapper --->
 
 			<cfoutput>
 				<cfif attributes.showFooter>
