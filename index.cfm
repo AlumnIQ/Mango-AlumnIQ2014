@@ -29,7 +29,7 @@
 		</mango:Posts>
 
 		<mango:Archive pageSize="1">
-			<div class="row">
+			<div class="row margin-top-50">
 				<div id="col-md-12">
 					<mango:ArchiveProperty ifHasNextPage>
 						<a class="btn btn-lg btn-danger pull-left" href="<mango:ArchiveProperty link pageDifference='1' />"
