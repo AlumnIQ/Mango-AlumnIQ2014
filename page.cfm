@@ -1,7 +1,7 @@
 <cfimport prefix="mango" taglib="../../tags/mango">
 <cfimport prefix="mangox" taglib="../../tags/mangoextras">
 <cfimport prefix="template" taglib=".">
-<cfsavecontent variable="pageTitle"><mango:Page><mango:PageProperty title /></mango:Page> &bull; FusionGrokker</cfsavecontent>
+<cfsavecontent variable="pageTitle"><mango:Page><mango:PageProperty title /></mango:Page> &bull; AlumnIQ Blog</cfsavecontent>
 <template:layout title="#pageTitle#">
 	<mango:Page>
 		<div class="post">
