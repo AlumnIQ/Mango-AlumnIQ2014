@@ -56,7 +56,7 @@
 
 					<!--- all archives by month --->
 					<mangox:TemplatePod id="monthly-archives" title="Monthly Archives">
-						<div class="sidebar-module" id="archives">
+						<div class="sidebar-module">
 							<h4>Archives:</h4>
 							<ul><mango:Archives type="month" count="6"><mango:Archive>
 								<li><a href="<mango:ArchiveProperty link />"><mango:ArchiveProperty title dateformat="mmmm yyyy" /> (<mango:ArchiveProperty postcount />)</a></li>
@@ -124,7 +124,7 @@
 
 					<!--- all archives by month --->
 					<mangox:TemplatePod id="monthly-archives" title="Monthly Archives">
-						<div class="sidebar-module" id="archives">
+						<div class="sidebar-module">
 							<h4>Archives:</h4>
 							<ul><mango:Archives type="month" count="6"><mango:Archive>
 								<li><a href="<mango:ArchiveProperty link />"><mango:ArchiveProperty title dateformat="mmmm yyyy" /> (<mango:ArchiveProperty postcount />)</a></li>
@@ -191,7 +191,7 @@
 
 					<!--- all archives by month --->
 					<mangox:TemplatePod id="monthly-archives" title="Monthly Archives">
-						<div class="sidebar-module" id="archives">
+						<div class="sidebar-module">
 							<h4>Archives:</h4>
 							<ul><mango:Archives type="month" count="6"><mango:Archive>
 								<li><a href="<mango:ArchiveProperty link />"><mango:ArchiveProperty title dateformat="mmmm yyyy" /> (<mango:ArchiveProperty postcount />)</a></li>
