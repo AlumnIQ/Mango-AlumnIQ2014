@@ -34,6 +34,9 @@
 	<cfsavecontent variable="variables.tmpsearch"><mango:Blog searchUrl /></cfsavecontent>
 	<cfset variables.tmpsearch = trim(variables.tmpsearch) />
 
+	<cfparam name="attributes.showHeaderImage" default="true" />
+	<cfparam name="attributes.showFooter" default="true" />
+
 	<cfparam name="attributes.postImage" default="[error: no post image]" />
 	<cfparam name="attributes.postTitle" default="[error: no post title]" />
 	<cfparam name="attributes.postByline" default="[error: no post byline]" />
@@ -78,30 +81,32 @@
 
 			<mango:Event name="beforeHtmlBodyStart" />
 
-			<div class="bg">
-				<div class="bg-normal" style="background-image:url(<cfoutput>#attributes.postImage#</cfoutput>)"></div>
-				<div class="bg-blur" style="background-image:url(<cfoutput>#attributes.postImage#</cfoutput>)"></div>
-			</div>
+			<cfif attributes.showHeaderImage>
+				<div class="bg">
+					<div class="bg-normal" style="background-image:url(<cfoutput>#attributes.postImage#</cfoutput>)"></div>
+					<div class="bg-blur" style="background-image:url(<cfoutput>#attributes.postImage#</cfoutput>)"></div>
+				</div>
 
-			<header>
-				<div class="slogan-holder">
-					<cfoutput>
-						<h2>#attributes.postTitle#</h2>
-						<h4>
-							#attributes.postByline#
-							<br/><a href="#attributes.postLink#">permanent link</a>
-						</h4>
-					</cfoutput>
-				</div>
-				<div class="nav-holder">
-					<ul class="nav">
-						<li><a class="blog-nav-item" href="http://www.alumniq.com">AlumnIQ Home</a></li>
-						<li><a class="blog-nav-item active" href="http://blog.alumniq.com">Blog</a></li>
-						<li><a class="blog-nav-item" href="http://www.alumniq.com/#about">About</a></li>
-						<li><a class="blog-nav-item" href="http://www.alumniq.com/#features">Features</a></li>
-					</ul>
-				</div>
-			</header>
+				<header>
+					<div class="slogan-holder">
+						<cfoutput>
+							<h2>#attributes.postTitle#</h2>
+							<h4>
+								#attributes.postByline#
+								<br/><a href="#attributes.postLink#">permanent link</a>
+							</h4>
+						</cfoutput>
+					</div>
+					<div class="nav-holder">
+						<ul class="nav">
+							<li><a class="blog-nav-item" href="http://www.alumniq.com">AlumnIQ Home</a></li>
+							<li><a class="blog-nav-item active" href="http://blog.alumniq.com">Blog</a></li>
+							<li><a class="blog-nav-item" href="http://www.alumniq.com/#about">About</a></li>
+							<li><a class="blog-nav-item" href="http://www.alumniq.com/#features">Features</a></li>
+						</ul>
+					</div>
+				</header>
+			</cfif>
 
 			<div class="wrapper">
 			<div class="container">
@@ -112,14 +117,19 @@
 				</div>
 
 			</div><!--- /container --->
-			<!--- bottom bar (in lieu of sidebar) --->
-			<cfinclude template="sidebar.cfm" />
+
+			<cfif attributes.showFooter>
+				<!--- bottom bar (in lieu of sidebar) --->
+				<cfinclude template="sidebar.cfm" />
+			</cfif>
 		</div><!--- /wrapper --->
 
 			<cfoutput>
-				<footer class="blog-footer">
-					<p>Content Copyright &copy; #year(now())# CounterMarch Systems LLC</p>
-				</footer>
+				<cfif attributes.showFooter>
+					<footer class="blog-footer">
+						<p>Content Copyright &copy; #year(now())# CounterMarch Systems LLC</p>
+					</footer>
+				</cfif>
 
 				<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 				<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>

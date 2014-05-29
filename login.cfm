@@ -1,9 +1,9 @@
 <cfimport prefix="mango" taglib="../../tags/mango">
 <cfimport prefix="mangox" taglib="../../tags/mangoextras">
 <cfimport prefix="template" taglib=".">
-<template:layout tabs="false" sidebar="false" title="Login &bull; CounterMarch Blog">
+<template:layout showHeaderImage="false" showFooter="false" title="Login &bull; AlumnIQ Blog">
 	<div class="post">
-		<h1>Super Secret Administration Area!</h1>
+		<h1>Blog Admin Login</h1>
 		<mango:RequestVar ifExists="errormsg">
 			<p class="alert alert-error"><mango:RequestVar name="errormsg" /></p>
 		</mango:RequestVar>
